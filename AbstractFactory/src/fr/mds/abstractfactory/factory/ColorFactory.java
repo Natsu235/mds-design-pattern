@@ -12,17 +12,16 @@ public class ColorFactory extends AbstractFactory {
 
 	@Override
 	protected Color getColor(String color) {
-		if (color.equalsIgnoreCase("Red")) {
-            return new Red();
-        }
-		else if (color.equalsIgnoreCase("Green")) {
-            return new Green();
-        }
-		else if (color.equalsIgnoreCase("Blue")) {
-            return new Blue();
-        }
- 
-        return null;
+		switch (color) {
+		    case "Red":
+		    	return new Red();
+		    case "Green":
+		    	return new Green();
+		    case "Blue":
+		    	return new Blue();
+		    default:
+		    	return null;
+		}
 	}
 
 }
